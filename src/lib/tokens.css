@@ -1,0 +1,135 @@
+/* Outfit — the wiki's display typeface (self-hosted, weight 900), used for the wordmark and page titles. */
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/fonts/outfit-900-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/fonts/outfit-900-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Dark-only token set, mirrored from the live wiki (wiki-app/src/styles/tokens.css [data-theme=dark]). */
+:root {
+  --bg: #1e1e1e;
+  --bg-subtle: #252525;
+  --sidebar: #181818;
+  --infobox: #252525;
+  --code: #252525;
+  --code-toolbar: #2a2a2a;
+  --text: #e8e8e8;
+  --heading: #ffffff;
+  --muted: #b1b8c0;
+  --link: #79b8ff;
+  --link-hover: #a5c8ff;
+  --on-link: #0d1117;
+  --border: #3d3d3d;
+  --border-subtle: #2d2d2d;
+  --border-code: #3a3a3a;
+  --accent: #79b8ff;
+  --accent-soft: #1b2b40;
+  --error: #ffaab5;
+  --warning: #ffb951;
+  --success: #3fb950;
+  --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.22);
+  --shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.32);
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  /* Shared type scale so the whole app reads at one comfortable size. */
+  --fs-xs: 14px;
+  --fs-sm: 15.5px;
+  --fs-base: 17px;
+  --fs-md: 19px;
+  --fs-lg: 23px;
+  --fs-xl: 29px;
+  --fs-2xl: 38px;
+  --r-sm: 5px;
+  --r-md: 8px;
+  --r-lg: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin scrollbar mirrored from the wiki for a consistent look. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}
+
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--on-link);
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: var(--r-md);
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
