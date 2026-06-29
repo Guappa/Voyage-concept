@@ -2,6 +2,9 @@ node_modules/
 dist/
 .wrangler/
 
+# local-only deploy script (maintainer creds)
+deploy.sh
+
 # logs / debug
 *.log
 npm-debug.log*
